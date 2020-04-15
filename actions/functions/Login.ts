@@ -14,9 +14,7 @@ async function getAuthToken(username: string, password: string)
         {
           firstName
           lastName
-          email
           username
-          avatarURL
         }
       }
     }`;
@@ -31,9 +29,9 @@ async function Login({username, password}: tokenAuthParams)
             console.error("We have an error in authenticating you.");
             return { errors: response.errors };
         } else if(response.data) {
-            setToken(response.data.tokenAuth.refreshToken);
+            setToken(response.data.tokenAuth.token);
             setUsername(response.data.tokenAuth.user.username);
-            setRefreshToken(response.data.tokenAuth.token);
+            setRefreshToken(response.data.tokenAuth.refreshToken);
             setUserData(response.data.tokenAuth.user);
             return response.data.tokenAuth;
         } else {

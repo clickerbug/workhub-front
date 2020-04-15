@@ -8,7 +8,10 @@ async function registerUser(email: string, password: string)
     const query = `mutation registerUser($email: String!, $password: String!){
       registerUser(email: $email, password: $password)
       {
-        username
+        returning
+        {
+            username
+        }
         status
       }
     }`;

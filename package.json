@@ -6,8 +6,8 @@
   "scripts": {
     "build": "next build",
     "build-analyse": "ANALYZE=true next build",
-    "dev": "NODE_ENV='dev' node server.js",
-    "start": "NODE_ENV='production' node server.js"
+    "dev": "node server.js",
+    "start": "node server.js"
   },
   "author": "aswinshenoy <aswinshenoy65@gmail.com>",
   "dependencies": {

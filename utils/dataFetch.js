@@ -8,14 +8,13 @@ export default ({ query, variables }) => {
 
     //@todo support custom/multiple providers, currently uses the 0 index provider
     const API_URL = API.providers[0].endpoint;
-    const TOKEN_PREFIX = API.providers[0].endpoint;
 
     const token = cookies.get('token');
     const apiConfig = {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            Authorization: token ? `${TOKEN_PREFIX}${token}` : null,
+            Authorization: token ? `JWT ${token}` : null,
         },
         body: JSON.stringify({ query, variables }),
     };

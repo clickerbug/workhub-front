@@ -57,35 +57,18 @@ const LoginForm: React.FC<React.Props> = () => {
     };
 
     const renderUsernameInput = () => <div>
-        {
-            rememberUser === 'true' && userData ?
-                <div className="p-2">
-                    <div className="row m-0">
-                        <div className="col-2">
-                            <img src={userData.avatarURL} className="w-100" alt="user-avatar" />
-                        </div>
-                        <div className="col-10 d-flex align-items-center p-2">
-                            <div>
-                                <div className="font-weight-bold">{userData.firstName} {userData.lastName}</div>
-                                <div>@{userData.username}</div>
-                                <button onClick={() => setRememberUser(false)} className="btn">Change Account</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                : <TextInput
-                    autoCapitalize="off"
-                    autoCorrect="off"
-                    autoComplete="email"
-                    spellCheck="false"
-                    label="Username or Email Address"
-                    name="username-email"
-                    type="text"
-                    disableSpace
-                    isRequired
-                    onValidate={(state) => setInvalidUsernameState(!state)}
-                />
-        }
+       <TextInput
+            autoCapitalize="off"
+            autoCorrect="off"
+            autoComplete="email"
+            spellCheck="false"
+            label="Username or Email Address"
+            name="username-email"
+            type="text"
+            disableSpace
+            isRequired
+            onValidate={(state) => setInvalidUsernameState(!state)}
+        />
     </div>;
 
 
